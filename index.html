@@ -5,7 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Family APPS</title>
+<title>FAMILY APPS</title>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -25,7 +28,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 --sub:#94a3b8;
 
 --main:#ff2e2e;
---main2:#ff6b00;
 
 }
 
@@ -39,7 +41,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 --sub:#475569;
 
 --main:#e11d48;
---main2:#ff4d4d;
 
 }
 
@@ -100,10 +101,7 @@ justify-content:space-between;
 
 font-size:32px;
 font-weight:900;
-
-background:linear-gradient(90deg,var(--main),var(--main2));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+color:var(--main);
 
 }
 
@@ -167,13 +165,7 @@ margin-bottom:20px;
 
 font-weight:900;
 
-}
-
-.hero h1 span{
-
-background:linear-gradient(90deg,var(--main),var(--main2));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+color:var(--main);
 
 }
 
@@ -203,8 +195,7 @@ text-decoration:none;
 
 font-weight:700;
 
-background:
-linear-gradient(90deg,var(--main),var(--main2));
+background:var(--main);
 
 color:white;
 
@@ -240,6 +231,7 @@ margin-bottom:50px;
 
 font-size:48px;
 margin-bottom:10px;
+color:var(--main);
 
 }
 
@@ -317,6 +309,8 @@ font-size:28px;
 
 margin-bottom:12px;
 
+color:var(--main);
+
 }
 
 .card-content p{
@@ -342,8 +336,7 @@ border-radius:16px;
 
 text-decoration:none;
 
-background:
-linear-gradient(90deg,var(--main),var(--main2));
+background:var(--main);
 
 color:white;
 
@@ -443,7 +436,7 @@ font-size:38px;
 <div class="navbar">
 
 <div class="logo">
-Family APPS
+FAMILY APPS
 </div>
 
 <button class="theme-btn" id="themeBtn">
@@ -462,10 +455,7 @@ Family APPS
 
 <h1>
 
-تحميل تطبيقاتنا
-
-
-الاحترافية
+تحميل تطبيقاتنا الاحترافية
 
 </h1>
 
@@ -499,66 +489,7 @@ Family APPS
 
 </div>
 
-<div class="apps-grid">
-
-<!-- 14 APPS -->
-
-<script>
-
-const apps = [
-
-"IBO Player",
-"KING4K",
-"IBOSS",
-"MAX TV",
-"STAR IPTV",
-"ULTRA PLAYER",
-"VIP STREAM",
-"FAST TV",
-"MEGA IPTV",
-"ROYAL TV",
-"PRO STREAM",
-"XTREAM PRO",
-"MASTER IPTV",
-"SMART PLAYER"
-
-];
-
-document.write(
-
-apps.map((app,index)=>`
-
-<div class="card">
-
-<img src="https://picsum.photos/600/400?random=${index+1}">
-
-<div class="card-content">
-
-<h3>${app}</h3>
-
-<p>
-تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.
-</p>
-
-<a href="#" class="download-btn">
-
-<i class="fa-solid fa-download"></i>
-
-تحميل APK
-
-</a>
-
-</div>
-
-</div>
-
-`).join('')
-
-);
-
-</script>
-
-</div>
+<div class="apps-grid" id="appsContainer"></div>
 
 </section>
 
@@ -566,7 +497,7 @@ apps.map((app,index)=>`
 
 <footer>
 
-© 2026 Family APPS — ALL RIGHTS RESERVED
+© 2026 FAMILY APPS — ALL RIGHTS RESERVED
 
 </footer>
 
@@ -579,6 +510,164 @@ target="_blank">
 <i class="fa-brands fa-whatsapp"></i>
 
 </a>
+
+<!-- APPS SCRIPT -->
+
+<script>
+
+/*
+يمكنك تعديل:
+اسم التطبيق
+صورة التطبيق
+رابط التحميل
+اسم زر التحميل
+*/
+
+const apps = [
+
+{
+name:"IBO Player",
+image:"https://picsum.photos/600/400?random=1",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل APK",
+download:"#"
+},
+
+{
+name:"KING4K",
+image:"https://picsum.photos/600/400?random=2",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل التطبيق",
+download:"#"
+},
+
+{
+name:"IBOSS",
+image:"https://picsum.photos/600/400?random=3",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تنزيل الآن",
+download:"#"
+},
+
+{
+name:"MAX TV",
+image:"https://picsum.photos/600/400?random=4",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل مباشر",
+download:"#"
+},
+
+{
+name:"STAR IPTV",
+image:"https://picsum.photos/600/400?random=5",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل APK",
+download:"#"
+},
+
+{
+name:"ULTRA PLAYER",
+image:"https://picsum.photos/600/400?random=6",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل التطبيق",
+download:"#"
+},
+
+{
+name:"VIP STREAM",
+image:"https://picsum.photos/600/400?random=7",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تنزيل الآن",
+download:"#"
+},
+
+{
+name:"FAST TV",
+image:"https://picsum.photos/600/400?random=8",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل مباشر",
+download:"#"
+},
+
+{
+name:"MEGA IPTV",
+image:"https://picsum.photos/600/400?random=9",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل APK",
+download:"#"
+},
+
+{
+name:"ROYAL TV",
+image:"https://picsum.photos/600/400?random=10",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل التطبيق",
+download:"#"
+},
+
+{
+name:"PRO STREAM",
+image:"https://picsum.photos/600/400?random=11",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تنزيل الآن",
+download:"#"
+},
+
+{
+name:"XTREAM PRO",
+image:"https://picsum.photos/600/400?random=12",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل مباشر",
+download:"#"
+},
+
+{
+name:"MASTER IPTV",
+image:"https://picsum.photos/600/400?random=13",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل APK",
+download:"#"
+},
+
+{
+name:"SMART PLAYER",
+image:"https://picsum.photos/600/400?random=14",
+description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
+buttonText:"تحميل التطبيق",
+download:"#"
+}
+
+];
+
+const appsContainer = document.getElementById("appsContainer");
+
+appsContainer.innerHTML = apps.map(app => `
+
+<div class="card">
+
+<img src="${app.image}" alt="${app.name}">
+
+<div class="card-content">
+
+<h3>${app.name}</h3>
+
+<p>${app.description}</p>
+
+<a href="${app.download}" class="download-btn" target="_blank">
+
+<i class="fa-solid fa-download"></i>
+
+${app.buttonText}
+
+</a>
+
+</div>
+
+</div>
+
+`).join("");
+
+</script>
 
 <!-- THEME SCRIPT -->
 
