@@ -91,7 +91,7 @@ z-index:999;
 
 backdrop-filter:blur(15px);
 
-background:rgba(5,8,18,.6);
+background:rgba(5,8,18,.7);
 
 border-bottom:1px solid var(--border);
 
@@ -100,9 +100,11 @@ border-bottom:1px solid var(--border);
 .navbar{
 
 width:92%;
+max-width:1400px;
+
 margin:auto;
 
-height:85px;
+height:78px;
 
 display:flex;
 align-items:center;
@@ -110,21 +112,29 @@ justify-content:space-between;
 
 }
 
+/* LOGO */
+
 .logo{
 
-font-size:34px;
+font-size:28px;
 font-weight:900;
 
 color:var(--main);
 
 letter-spacing:1px;
 
+display:flex;
+align-items:center;
+
 }
+
+/* NAV */
 
 .nav-links{
 
 display:flex;
-gap:25px;
+align-items:center;
+gap:22px;
 
 }
 
@@ -133,6 +143,7 @@ gap:25px;
 color:white;
 text-decoration:none;
 
+font-size:16px;
 font-weight:700;
 
 transition:.3s;
@@ -157,7 +168,7 @@ justify-content:center;
 
 text-align:center;
 
-padding:120px 20px 50px;
+padding:140px 20px 70px;
 
 position:relative;
 
@@ -195,9 +206,9 @@ animation:fadeUp 1s ease;
 
 .hero h1{
 
-font-size:78px;
+font-size:64px;
 
-line-height:1.2;
+line-height:1.3;
 
 margin-bottom:20px;
 
@@ -213,13 +224,15 @@ color:var(--main);
 
 .hero p{
 
-font-size:22px;
+font-size:20px;
 
 line-height:2;
 
 color:var(--sub);
 
 margin-bottom:35px;
+
+padding:0 10px;
 
 }
 
@@ -229,9 +242,10 @@ margin-bottom:35px;
 
 display:inline-flex;
 align-items:center;
+justify-content:center;
 gap:12px;
 
-padding:18px 35px;
+padding:17px 32px;
 
 border-radius:18px;
 
@@ -290,6 +304,8 @@ transform:translateY(-5px) scale(1.03);
 .section{
 
 width:92%;
+max-width:1400px;
+
 margin:auto;
 
 padding-bottom:100px;
@@ -306,7 +322,7 @@ margin-bottom:60px;
 
 .section-title h2{
 
-font-size:52px;
+font-size:48px;
 
 margin-bottom:12px;
 
@@ -329,9 +345,9 @@ color:var(--sub);
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
+repeat(auto-fit,minmax(300px,1fr));
 
-gap:35px;
+gap:30px;
 
 }
 
@@ -344,7 +360,7 @@ linear-gradient(180deg,var(--card),var(--card2));
 
 border:1px solid var(--border);
 
-border-radius:30px;
+border-radius:28px;
 
 overflow:hidden;
 
@@ -377,7 +393,7 @@ pointer-events:none;
 .card:hover{
 
 transform:
-translateY(-12px)
+translateY(-10px)
 scale(1.01);
 
 box-shadow:
@@ -391,7 +407,7 @@ rgba(255,35,70,.3);
 .card img{
 
 width:100%;
-height:230px;
+height:220px;
 
 object-fit:cover;
 
@@ -401,13 +417,13 @@ transition:.6s;
 
 .card:hover img{
 
-transform:scale(1.08);
+transform:scale(1.05);
 
 }
 
 .card-content{
 
-padding:25px;
+padding:24px;
 
 }
 
@@ -417,27 +433,31 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 
+gap:15px;
+
 margin-bottom:15px;
 
 }
 
 .platform{
 
-width:52px;
-height:52px;
+width:50px;
+height:50px;
 
-border-radius:16px;
+border-radius:15px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:24px;
+font-size:23px;
 
 background:
 rgba(255,255,255,.05);
 
 border:1px solid var(--border);
+
+flex-shrink:0;
 
 }
 
@@ -451,9 +471,11 @@ color:#ffffff;
 
 .card h3{
 
-font-size:30px;
+font-size:27px;
 
 margin-bottom:10px;
+
+word-break:break-word;
 
 }
 
@@ -464,6 +486,8 @@ color:var(--sub);
 line-height:1.9;
 
 margin-bottom:20px;
+
+font-size:15px;
 
 }
 
@@ -476,7 +500,7 @@ justify-content:center;
 align-items:center;
 gap:12px;
 
-padding:18px;
+padding:17px;
 
 border-radius:18px;
 
@@ -484,7 +508,7 @@ text-decoration:none;
 
 font-weight:800;
 
-font-size:17px;
+font-size:16px;
 
 background:
 linear-gradient(135deg,var(--main),var(--main2));
@@ -546,7 +570,9 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 
-padding:16px 18px;
+gap:10px;
+
+padding:14px 16px;
 
 border-radius:18px;
 
@@ -561,20 +587,22 @@ backdrop-filter:blur(10px);
 
 .app-code{
 
-font-size:24px;
+font-size:22px;
 font-weight:900;
 
-letter-spacing:3px;
+letter-spacing:2px;
+
+word-break:break-word;
 
 }
 
 .copy-btn{
 
-width:48px;
-height:48px;
+width:46px;
+height:46px;
 
 border:none;
-border-radius:15px;
+border-radius:14px;
 
 cursor:pointer;
 
@@ -585,9 +613,11 @@ border:1px solid var(--border);
 
 color:white;
 
-font-size:20px;
+font-size:18px;
 
 transition:.3s;
+
+flex-shrink:0;
 
 }
 
@@ -603,7 +633,7 @@ transform:scale(1.08);
 
 footer{
 
-padding:40px 20px;
+padding:35px 20px;
 
 text-align:center;
 
@@ -613,6 +643,8 @@ border-top:1px solid var(--border);
 
 margin-top:50px;
 
+font-size:15px;
+
 }
 
 /* WHATSAPP */
@@ -621,11 +653,11 @@ margin-top:50px;
 
 position:fixed;
 
-left:25px;
-bottom:25px;
+left:20px;
+bottom:20px;
 
-width:70px;
-height:70px;
+width:65px;
+height:65px;
 
 border-radius:50%;
 
@@ -635,7 +667,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:35px;
+font-size:32px;
 
 color:white;
 
@@ -676,25 +708,178 @@ transform:translateY(0);
 
 }
 
+/* TABLET */
+
+@media(max-width:992px){
+
+.hero h1{
+font-size:52px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title h2{
+font-size:40px;
+}
+
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
 
+.navbar{
+
+height:70px;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+.nav-links{
+
+gap:15px;
+
+}
+
+.nav-links a{
+
+font-size:14px;
+
+}
+
+.hero{
+
+padding-top:120px;
+
+}
+
 .hero h1{
 
-font-size:50px;
+font-size:38px;
+line-height:1.5;
+
+}
+
+.hero p{
+
+font-size:16px;
+line-height:1.9;
+
+}
+
+.hero-btn{
+
+width:100%;
+max-width:280px;
+
+font-size:15px;
 
 }
 
 .section-title h2{
 
-font-size:40px;
+font-size:34px;
+
+}
+
+.section-title p{
+
+font-size:15px;
+
+}
+
+.apps-grid{
+
+grid-template-columns:1fr;
+
+gap:25px;
+
+}
+
+.card h3{
+
+font-size:24px;
+
+}
+
+.card img{
+
+height:210px;
+
+}
+
+.whatsapp{
+
+width:58px;
+height:58px;
+
+font-size:28px;
+
+left:15px;
+bottom:15px;
+
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.logo{
+
+font-size:20px;
 
 }
 
 .nav-links{
 
 display:none;
+
+}
+
+.hero h1{
+
+font-size:31px;
+
+}
+
+.hero p{
+
+font-size:15px;
+
+}
+
+.section{
+
+width:94%;
+
+}
+
+.card-content{
+
+padding:20px;
+
+}
+
+.download-btn{
+
+font-size:15px;
+
+padding:15px;
+
+}
+
+.app-code{
+
+font-size:18px;
 
 }
 
@@ -785,7 +970,7 @@ FAMILY APPS
 
 <footer>
 
-© 2027 FAMILY APPS — ALL RIGHTS RESERVED
+© 2026 FAMILY APPS — ALL RIGHTS RESERVED
 
 </footer>
 
