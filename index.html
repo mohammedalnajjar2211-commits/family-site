@@ -2,47 +2,47 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FAMILY APPS</title>
 
 <!-- FAVICON -->
-<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
+<link rel="icon" type="image/png"
+href="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
 
+<!-- GOOGLE FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<!-- FONT AWESOME -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <style>
 
+/* ROOT */
+
 :root{
 
---bg:#060816;
---card:#10182b;
---border:rgba(255,255,255,.08);
+--bg:#070b17;
+--card:#10192d;
+--card2:#16213d;
 
 --text:#ffffff;
 --sub:#94a3b8;
 
---main:#ff2e2e;
+--main:#ff2346;
+--main2:#ff4d6d;
+
+--border:rgba(255,255,255,.08);
 
 }
 
-.light{
-
---bg:#f3f6fb;
---card:#ffffff;
---border:rgba(0,0,0,.08);
-
---text:#0f172a;
---sub:#475569;
-
---main:#e11d48;
-
-}
+/* RESET */
 
 *{
 margin:0;
@@ -50,24 +50,37 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 
 font-family:'Cairo',sans-serif;
 
 background:
-radial-gradient(circle at top right,#401010 0%,transparent 25%),
-radial-gradient(circle at bottom left,#2d0b0b 0%,transparent 20%),
+radial-gradient(circle at top right,#4a0d1a 0%,transparent 25%),
+radial-gradient(circle at bottom left,#12091d 0%,transparent 20%),
 var(--bg);
 
 color:var(--text);
-
-transition:.3s;
 
 overflow-x:hidden;
 
 }
 
-/* NAVBAR */
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:var(--main);
+border-radius:20px;
+}
+
+/* HEADER */
 
 header{
 
@@ -78,7 +91,7 @@ z-index:999;
 
 backdrop-filter:blur(15px);
 
-background:rgba(0,0,0,.35);
+background:rgba(5,8,18,.6);
 
 border-bottom:1px solid var(--border);
 
@@ -89,7 +102,7 @@ border-bottom:1px solid var(--border);
 width:92%;
 margin:auto;
 
-height:80px;
+height:85px;
 
 display:flex;
 align-items:center;
@@ -99,37 +112,36 @@ justify-content:space-between;
 
 .logo{
 
-font-size:32px;
+font-size:34px;
 font-weight:900;
+
 color:var(--main);
 
-}
-
-.theme-btn{
-
-width:50px;
-height:50px;
-
-border:none;
-border-radius:50%;
-
-cursor:pointer;
-
-background:var(--card);
-
-color:var(--text);
-
-font-size:20px;
-
-transition:.4s;
-
-border:1px solid var(--border);
+letter-spacing:1px;
 
 }
 
-.theme-btn:hover{
+.nav-links{
 
-transform:rotate(180deg);
+display:flex;
+gap:25px;
+
+}
+
+.nav-links a{
+
+color:white;
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:var(--main);
 
 }
 
@@ -147,23 +159,53 @@ text-align:center;
 
 padding:120px 20px 50px;
 
+position:relative;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:rgba(255,35,70,.12);
+
+filter:blur(120px);
+
+border-radius:50%;
+
+top:10%;
+right:-10%;
+
 }
 
 .hero-content{
 
 max-width:850px;
+position:relative;
+z-index:2;
+
+animation:fadeUp 1s ease;
 
 }
 
 .hero h1{
 
-font-size:75px;
+font-size:78px;
 
-line-height:1.1;
+line-height:1.2;
 
 margin-bottom:20px;
 
 font-weight:900;
+
+}
+
+.hero h1 span{
 
 color:var(--main);
 
@@ -171,41 +213,75 @@ color:var(--main);
 
 .hero p{
 
-font-size:20px;
-
-color:var(--sub);
+font-size:22px;
 
 line-height:2;
 
+color:var(--sub);
+
+margin-bottom:35px;
+
 }
 
-/* BUTTON */
+/* HERO BUTTON */
 
 .hero-btn{
 
-display:inline-block;
+display:inline-flex;
+align-items:center;
+gap:12px;
 
-margin-top:35px;
+padding:18px 35px;
 
-padding:18px 30px;
-
-border-radius:16px;
+border-radius:18px;
 
 text-decoration:none;
 
-font-weight:700;
+font-weight:800;
 
-background:var(--main);
+background:
+linear-gradient(135deg,var(--main),var(--main2));
 
 color:white;
 
-transition:.3s;
+box-shadow:
+0 10px 30px rgba(255,35,70,.35);
+
+transition:.4s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:rgba(255,255,255,.15);
+
+transition:.5s;
+
+}
+
+.hero-btn:hover::before{
+
+left:100%;
 
 }
 
 .hero-btn:hover{
 
-transform:translateY(-5px);
+transform:translateY(-5px) scale(1.03);
 
 }
 
@@ -223,34 +299,39 @@ padding-bottom:100px;
 .section-title{
 
 text-align:center;
-margin-bottom:50px;
+
+margin-bottom:60px;
 
 }
 
 .section-title h2{
 
-font-size:48px;
-margin-bottom:10px;
+font-size:52px;
+
+margin-bottom:12px;
+
 color:var(--main);
 
 }
 
 .section-title p{
 
+font-size:18px;
+
 color:var(--sub);
 
 }
 
-/* APPS GRID */
+/* GRID */
 
 .apps-grid{
 
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
+repeat(auto-fit,minmax(320px,1fr));
 
-gap:30px;
+gap:35px;
 
 }
 
@@ -258,42 +339,69 @@ gap:30px;
 
 .card{
 
-background:rgba(255,255,255,.03);
+background:
+linear-gradient(180deg,var(--card),var(--card2));
 
 border:1px solid var(--border);
 
-border-radius:28px;
+border-radius:30px;
 
 overflow:hidden;
 
-transition:.4s;
+transition:.5s;
 
-backdrop-filter:blur(10px);
+position:relative;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.2);
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(180deg,
+rgba(255,255,255,.04),
+transparent);
+
+pointer-events:none;
 
 }
 
 .card:hover{
 
-transform:translateY(-10px);
+transform:
+translateY(-12px)
+scale(1.01);
 
-border-color:rgba(255,0,0,.3);
+box-shadow:
+0 25px 50px rgba(0,0,0,.35);
+
+border-color:
+rgba(255,35,70,.3);
 
 }
 
 .card img{
 
 width:100%;
-height:220px;
+height:230px;
 
 object-fit:cover;
 
-transition:.5s;
+transition:.6s;
 
 }
 
 .card:hover img{
 
-transform:scale(1.06);
+transform:scale(1.08);
 
 }
 
@@ -303,17 +411,53 @@ padding:25px;
 
 }
 
-.card-content h3{
+.app-top{
 
-font-size:28px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-margin-bottom:12px;
-
-color:var(--main);
+margin-bottom:15px;
 
 }
 
-.card-content p{
+.platform{
+
+width:52px;
+height:52px;
+
+border-radius:16px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:24px;
+
+background:
+rgba(255,255,255,.05);
+
+border:1px solid var(--border);
+
+}
+
+.android{
+color:#3ddc84;
+}
+
+.apple{
+color:#ffffff;
+}
+
+.card h3{
+
+font-size:30px;
+
+margin-bottom:10px;
+
+}
+
+.card p{
 
 color:var(--sub);
 
@@ -323,32 +467,135 @@ margin-bottom:20px;
 
 }
 
+/* DOWNLOAD BUTTON */
+
 .download-btn{
 
 display:flex;
 justify-content:center;
 align-items:center;
-gap:10px;
+gap:12px;
 
-padding:15px;
+padding:18px;
 
-border-radius:16px;
+border-radius:18px;
 
 text-decoration:none;
 
-background:var(--main);
+font-weight:800;
+
+font-size:17px;
+
+background:
+linear-gradient(135deg,var(--main),var(--main2));
 
 color:white;
 
-font-weight:700;
+position:relative;
 
-transition:.3s;
+overflow:hidden;
+
+transition:.4s;
+
+box-shadow:
+0 12px 30px rgba(255,35,70,.3);
+
+}
+
+.download-btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:
+rgba(255,255,255,.15);
+
+transition:.5s;
+
+}
+
+.download-btn:hover::before{
+
+left:100%;
 
 }
 
 .download-btn:hover{
 
-transform:scale(1.03);
+transform:translateY(-4px);
+
+box-shadow:
+0 18px 35px rgba(255,35,70,.4);
+
+}
+
+/* CODE BOX */
+
+.code-box{
+
+margin-top:15px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:16px 18px;
+
+border-radius:18px;
+
+background:
+rgba(255,255,255,.05);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(10px);
+
+}
+
+.app-code{
+
+font-size:24px;
+font-weight:900;
+
+letter-spacing:3px;
+
+}
+
+.copy-btn{
+
+width:48px;
+height:48px;
+
+border:none;
+border-radius:15px;
+
+cursor:pointer;
+
+background:
+rgba(255,255,255,.06);
+
+border:1px solid var(--border);
+
+color:white;
+
+font-size:20px;
+
+transition:.3s;
+
+}
+
+.copy-btn:hover{
+
+background:var(--main);
+
+transform:scale(1.08);
 
 }
 
@@ -360,9 +607,11 @@ padding:40px 20px;
 
 text-align:center;
 
+color:var(--sub);
+
 border-top:1px solid var(--border);
 
-color:var(--sub);
+margin-top:50px;
 
 }
 
@@ -375,8 +624,8 @@ position:fixed;
 left:25px;
 bottom:25px;
 
-width:65px;
-height:65px;
+width:70px;
+height:70px;
 
 border-radius:50%;
 
@@ -386,7 +635,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:34px;
+font-size:35px;
 
 color:white;
 
@@ -394,7 +643,8 @@ text-decoration:none;
 
 z-index:9999;
 
-box-shadow:0 10px 30px rgba(37,211,102,.4);
+box-shadow:
+0 10px 30px rgba(37,211,102,.45);
 
 transition:.3s;
 
@@ -402,7 +652,27 @@ transition:.3s;
 
 .whatsapp:hover{
 
-transform:scale(1.1);
+transform:scale(1.12);
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
 
 }
 
@@ -418,13 +688,20 @@ font-size:50px;
 
 .section-title h2{
 
-font-size:38px;
+font-size:40px;
+
+}
+
+.nav-links{
+
+display:none;
 
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -439,9 +716,13 @@ font-size:38px;
 FAMILY APPS
 </div>
 
-<button class="theme-btn" id="themeBtn">
-<i class="fa-solid fa-moon"></i>
-</button>
+<div class="nav-links">
+
+<a href="#">الرئيسية</a>
+<a href="#apps">التطبيقات</a>
+<a href="#">تواصل</a>
+
+</div>
 
 </div>
 
@@ -455,19 +736,24 @@ FAMILY APPS
 
 <h1>
 
-تحميل تطبيقاتنا الاحترافية
+أفضل <span>تطبيقات IPTV</span><br>
+
+للاندرويد والايفون
 
 </h1>
 
 <p>
 
-أفضل منصة لتحميل تطبيقات الاندرويد والايفون وتلفزيونات الجي وسامسونج
+منصة احترافية لتحميل أحدث تطبيقاتنا للاندرويد والايفون
+بتصميم عصري وتجربة استخدام سريعة وآمنة
 
 </p>
 
 <a href="#apps" class="hero-btn">
 
-ابدأ الآن
+<i class="fa-solid fa-download"></i>
+
+ابدأ التحميل
 
 </a>
 
@@ -484,7 +770,9 @@ FAMILY APPS
 <h2>التطبيقات</h2>
 
 <p>
-14 تطبيق احترافي جاهز للتحميل
+
+6 تطبيقات اندرويد + 4 تطبيقات ايفون
+
 </p>
 
 </div>
@@ -511,138 +799,129 @@ target="_blank">
 
 </a>
 
-<!-- APPS SCRIPT -->
+<!-- SCRIPT -->
 
 <script>
 
-/*
-يمكنك تعديل:
-اسم التطبيق
-صورة التطبيق
-رابط التحميل
-اسم زر التحميل
-*/
-
 const apps = [
+
+/* ANDROID */
 
 {
 name:"FAMILY PLUS",
-image:"https://picsum.photos/600/400?random=1",
-description:"تطبيق فالمي بلص يعمل عن طريق الاكتف كود واليوزرنيم وكلمة المرور.",
-buttonText:"تحميل APK",
-buttonText:"DOWNLOADER CODE 855214",
-download:"#"
+platform:"android",
+icon:"fa-brands fa-android",
+image:"https://familychannels.tv/app-screen/family-activecode.jpeg",
+description:"تطبيق فاملي بلص يعمل عن طريق الاكتف كود او اليوزرنيم وكلمة المرور",
+download:"https://familychannels.tv/1/Family-activecode-plus.apk",
+buttonText:"تحميل للاندرويد",
+code:"630379"
 },
 
 {
 name:"KING4K",
+platform:"android",
+icon:"fa-brands fa-android",
 image:"https://picsum.photos/600/400?random=2",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل التطبيق",
-download:"#"
+description:"مشغل IPTV احترافي بواجهة حديثة وسهلة الاستخدام.",
+download:"#",
+buttonText:"تحميل للاندرويد",
+code:"84291744"
 },
 
 {
 name:"IBOSS",
+platform:"android",
+icon:"fa-brands fa-android",
 image:"https://picsum.photos/600/400?random=3",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تنزيل الآن",
-download:"#"
+description:"تطبيق بث مباشر سريع واحترافي لجميع القنوات.",
+download:"#",
+buttonText:"تحميل للاندرويد",
+code:"11557228"
 },
 
 {
 name:"MAX TV",
+platform:"android",
+icon:"fa-brands fa-android",
 image:"https://picsum.photos/600/400?random=4",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل مباشر",
-download:"#"
+description:"يدعم جميع صيغ IPTV مع سرعة عالية وثبات ممتاز.",
+download:"#",
+buttonText:"تحميل للاندرويد",
+code:"92744111"
 },
 
 {
 name:"STAR IPTV",
+platform:"android",
+icon:"fa-brands fa-android",
 image:"https://picsum.photos/600/400?random=5",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل APK",
-download:"#"
+description:"أفضل تطبيق IPTV بتجربة استخدام احترافية.",
+download:"#",
+buttonText:"تحميل للاندرويد",
+code:"77642190"
 },
 
 {
 name:"ULTRA PLAYER",
+platform:"android",
+icon:"fa-brands fa-android",
 image:"https://picsum.photos/600/400?random=6",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل التطبيق",
-download:"#"
+description:"تطبيق متطور يدعم البث بجودة عالية.",
+download:"#",
+buttonText:"تحميل للاندرويد",
+code:"55221774"
 },
 
+/* IOS */
+
 {
-name:"VIP STREAM",
+name:"iPlay TV",
+platform:"ios",
+icon:"fa-brands fa-apple",
 image:"https://picsum.photos/600/400?random=7",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تنزيل الآن",
-download:"#"
+description:"تطبيق IPTV احترافي لأجهزة الايفون والايباد.",
+download:"#",
+buttonText:"تحميل للايفون"
 },
 
 {
-name:"FAST TV",
+name:"Apple Stream",
+platform:"ios",
+icon:"fa-brands fa-apple",
 image:"https://picsum.photos/600/400?random=8",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل مباشر",
-download:"#"
+description:"تجربة مشاهدة سريعة وعصرية لمستخدمي iOS.",
+download:"#",
+buttonText:"تحميل للايفون"
 },
 
 {
-name:"MEGA IPTV",
+name:"iMax Player",
+platform:"ios",
+icon:"fa-brands fa-apple",
 image:"https://picsum.photos/600/400?random=9",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل APK",
-download:"#"
+description:"أفضل مشغل IPTV للايفون بجودة ممتازة.",
+download:"#",
+buttonText:"تحميل للايفون"
 },
 
 {
-name:"ROYAL TV",
+name:"iVision IPTV",
+platform:"ios",
+icon:"fa-brands fa-apple",
 image:"https://picsum.photos/600/400?random=10",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل التطبيق",
-download:"#"
-},
-
-{
-name:"PRO STREAM",
-image:"https://picsum.photos/600/400?random=11",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تنزيل الآن",
-download:"#"
-},
-
-{
-name:"XTREAM PRO",
-image:"https://picsum.photos/600/400?random=12",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل مباشر",
-download:"#"
-},
-
-{
-name:"MASTER IPTV",
-image:"https://picsum.photos/600/400?random=13",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل APK",
-download:"#"
-},
-
-{
-name:"SMART PLAYER",
-image:"https://picsum.photos/600/400?random=14",
-description:"تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.",
-buttonText:"تحميل التطبيق",
-download:"#"
+description:"واجهة أنيقة وسريعة لمحبي البث المباشر.",
+download:"#",
+buttonText:"تحميل للايفون"
 }
 
 ];
 
-const appsContainer = document.getElementById("appsContainer");
+const appsContainer =
+document.getElementById("appsContainer");
 
-appsContainer.innerHTML = apps.map(app => `
+appsContainer.innerHTML =
+apps.map(app => `
 
 <div class="card">
 
@@ -650,11 +929,27 @@ appsContainer.innerHTML = apps.map(app => `
 
 <div class="card-content">
 
+<div class="app-top">
+
 <h3>${app.name}</h3>
 
-<p>${app.description}</p>
+<div class="platform ${app.platform}">
 
-<a href="${app.download}" class="download-btn" target="_blank">
+<i class="${app.icon}"></i>
+
+</div>
+
+</div>
+
+<p>
+
+${app.description}
+
+</p>
+
+<a href="${app.download}"
+class="download-btn"
+target="_blank">
 
 <i class="fa-solid fa-download"></i>
 
@@ -662,54 +957,58 @@ ${app.buttonText}
 
 </a>
 
+${app.platform === "android" ? `
+
+<div class="code-box">
+
+<span class="app-code">
+
+${app.code}
+
+</span>
+
+<button class="copy-btn"
+onclick="copyCode(this)">
+
+<i class="fa-regular fa-copy"></i>
+
+</button>
+
+</div>
+
+` : ""}
+
 </div>
 
 </div>
 
 `).join("");
 
-</script>
+/* COPY FUNCTION */
 
-<!-- THEME SCRIPT -->
+function copyCode(button){
 
-<script>
+const code =
+button.parentElement
+.querySelector(".app-code")
+.innerText;
 
-const body = document.body;
+navigator.clipboard.writeText(code);
 
-const btn = document.getElementById("themeBtn");
+button.innerHTML =
+'<i class="fa-solid fa-check"></i>';
 
-if(localStorage.getItem("theme") === "light"){
+setTimeout(()=>{
 
-body.classList.add("light");
+button.innerHTML =
+'<i class="fa-regular fa-copy"></i>';
 
-btn.innerHTML =
-'<i class="fa-solid fa-sun"></i>';
-
-}
-
-btn.onclick = () => {
-
-body.classList.toggle("light");
-
-if(body.classList.contains("light")){
-
-localStorage.setItem("theme","light");
-
-btn.innerHTML =
-'<i class="fa-solid fa-sun"></i>';
-
-}else{
-
-localStorage.setItem("theme","dark");
-
-btn.innerHTML =
-'<i class="fa-solid fa-moon"></i>';
+},2000);
 
 }
-
-};
 
 </script>
 
 </body>
+
 </html>
