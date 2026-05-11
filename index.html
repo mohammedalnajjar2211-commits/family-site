@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IBO APPS</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+:root{
+
+--bg:#060816;
+--card:#10182b;
+--border:rgba(255,255,255,.08);
+
+--text:#ffffff;
+--sub:#94a3b8;
+
+--main:#ff2e2e;
+--main2:#ff6b00;
+
+}
+
+.light{
+
+--bg:#f3f6fb;
+--card:#ffffff;
+--border:rgba(0,0,0,.08);
+
+--text:#0f172a;
+--sub:#475569;
+
+--main:#e11d48;
+--main2:#ff4d4d;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Cairo',sans-serif;
+
+background:
+radial-gradient(circle at top right,#401010 0%,transparent 25%),
+radial-gradient(circle at bottom left,#2d0b0b 0%,transparent 20%),
+var(--bg);
+
+color:var(--text);
+
+transition:.3s;
+
+overflow-x:hidden;
+
+}
+
+/* NAVBAR */
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+
+backdrop-filter:blur(15px);
+
+background:rgba(0,0,0,.35);
+
+border-bottom:1px solid var(--border);
+
+}
+
+.navbar{
+
+width:92%;
+margin:auto;
+
+height:80px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:900;
+
+background:linear-gradient(90deg,var(--main),var(--main2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.theme-btn{
+
+width:50px;
+height:50px;
+
+border:none;
+border-radius:50%;
+
+cursor:pointer;
+
+background:var(--card);
+
+color:var(--text);
+
+font-size:20px;
+
+transition:.4s;
+
+border:1px solid var(--border);
+
+}
+
+.theme-btn:hover{
+
+transform:rotate(180deg);
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+padding:120px 20px 50px;
+
+}
+
+.hero-content{
+
+max-width:850px;
+
+}
+
+.hero h1{
+
+font-size:75px;
+
+line-height:1.1;
+
+margin-bottom:20px;
+
+font-weight:900;
+
+}
+
+.hero h1 span{
+
+background:linear-gradient(90deg,var(--main),var(--main2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+color:var(--sub);
+
+line-height:2;
+
+}
+
+/* BUTTON */
+
+.hero-btn{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:18px 30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+font-weight:700;
+
+background:
+linear-gradient(90deg,var(--main),var(--main2));
+
+color:white;
+
+transition:.3s;
+
+}
+
+.hero-btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* SECTION */
+
+.section{
+
+width:92%;
+margin:auto;
+
+padding-bottom:100px;
+
+}
+
+.section-title{
+
+text-align:center;
+margin-bottom:50px;
+
+}
+
+.section-title h2{
+
+font-size:48px;
+margin-bottom:10px;
+
+}
+
+.section-title p{
+
+color:var(--sub);
+
+}
+
+/* APPS GRID */
+
+.apps-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+/* CARD */
+
+.card{
+
+background:rgba(255,255,255,.03);
+
+border:1px solid var(--border);
+
+border-radius:28px;
+
+overflow:hidden;
+
+transition:.4s;
+
+backdrop-filter:blur(10px);
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:rgba(255,0,0,.3);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.card:hover img{
+
+transform:scale(1.06);
+
+}
+
+.card-content{
+
+padding:25px;
+
+}
+
+.card-content h3{
+
+font-size:28px;
+
+margin-bottom:12px;
+
+}
+
+.card-content p{
+
+color:var(--sub);
+
+line-height:1.9;
+
+margin-bottom:20px;
+
+}
+
+.download-btn{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+
+padding:15px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+background:
+linear-gradient(90deg,var(--main),var(--main2));
+
+color:white;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.download-btn:hover{
+
+transform:scale(1.03);
+
+}
+
+/* FOOTER */
+
+footer{
+
+padding:40px 20px;
+
+text-align:center;
+
+border-top:1px solid var(--border);
+
+color:var(--sub);
+
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+
+position:fixed;
+
+left:25px;
+bottom:25px;
+
+width:65px;
+height:65px;
+
+border-radius:50%;
+
+background:#25d366;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:34px;
+
+color:white;
+
+text-decoration:none;
+
+z-index:9999;
+
+box-shadow:0 10px 30px rgba(37,211,102,.4);
+
+transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+transform:scale(1.1);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+.section-title h2{
+
+font-size:38px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+IBO APPS
+</div>
+
+<button class="theme-btn" id="themeBtn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+
+تحميل تطبيقات
+<span>IPTV</span>
+
+الاحترافية
+
+</h1>
+
+<p>
+
+أفضل منصة لتحميل تطبيقات البث والتلفزيون الذكي
+بتصميم Ultra Modern سريع وأنيق مع دعم الوضع الليلي والنهاري.
+
+</p>
+
+<a href="#apps" class="hero-btn">
+
+ابدأ الآن
+
+</a>
+
+</div>
+
+</section>
+
+<!-- APPS -->
+
+<section class="section" id="apps">
+
+<div class="section-title">
+
+<h2>التطبيقات</h2>
+
+<p>
+14 تطبيق احترافي جاهز للتحميل
+</p>
+
+</div>
+
+<div class="apps-grid">
+
+<!-- 14 APPS -->
+
+<script>
+
+const apps = [
+
+"IBO Player",
+"KING4K",
+"IBOSS",
+"MAX TV",
+"STAR IPTV",
+"ULTRA PLAYER",
+"VIP STREAM",
+"FAST TV",
+"MEGA IPTV",
+"ROYAL TV",
+"PRO STREAM",
+"XTREAM PRO",
+"MASTER IPTV",
+"SMART PLAYER"
+
+];
+
+document.write(
+
+apps.map((app,index)=>`
+
+<div class="card">
+
+<img src="https://picsum.photos/600/400?random=${index+1}">
+
+<div class="card-content">
+
+<h3>${app}</h3>
+
+<p>
+تطبيق IPTV احترافي سريع وحديث يدعم جميع الأجهزة الذكية.
+</p>
+
+<a href="#" class="download-btn">
+
+<i class="fa-solid fa-download"></i>
+
+تحميل APK
+
+</a>
+
+</div>
+
+</div>
+
+`).join('')
+
+);
+
+</script>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 IBO APPS — ALL RIGHTS RESERVED
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/9647809522129"
+class="whatsapp"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!-- THEME SCRIPT -->
+
+<script>
+
+const body = document.body;
+
+const btn = document.getElementById("themeBtn");
+
+if(localStorage.getItem("theme") === "light"){
+
+body.classList.add("light");
+
+btn.innerHTML =
+'<i class="fa-solid fa-sun"></i>';
+
+}
+
+btn.onclick = () => {
+
+body.classList.toggle("light");
+
+if(body.classList.contains("light")){
+
+localStorage.setItem("theme","light");
+
+btn.innerHTML =
+'<i class="fa-solid fa-sun"></i>';
+
+}else{
+
+localStorage.setItem("theme","dark");
+
+btn.innerHTML =
+'<i class="fa-solid fa-moon"></i>';
+
+}
+
+};
+
+</script>
+
+</body>
+</html>
